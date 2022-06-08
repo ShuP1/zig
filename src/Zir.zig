@@ -2415,7 +2415,7 @@ pub const Inst = struct {
             operand: Ref,
 
             pub fn src(self: @This()) LazySrcLoc {
-                return .{ .node_offset = self.src_node };
+                return LazySrcLoc.nodeOffset(self.src_node);
             }
         },
         /// Used for unary operators, with a token source location.
@@ -2438,7 +2438,7 @@ pub const Inst = struct {
             payload_index: u32,
 
             pub fn src(self: @This()) LazySrcLoc {
-                return .{ .node_offset = self.src_node };
+                return LazySrcLoc.nodeOffset(self.src_node);
             }
         },
         pl_tok: struct {
@@ -2514,7 +2514,7 @@ pub const Inst = struct {
             bit_count: u16,
 
             pub fn src(self: @This()) LazySrcLoc {
-                return .{ .node_offset = self.src_node };
+                return LazySrcLoc.nodeOffset(self.src_node);
             }
         },
         bool_br: struct {
@@ -2533,7 +2533,7 @@ pub const Inst = struct {
             force_comptime: bool,
 
             pub fn src(self: @This()) LazySrcLoc {
-                return .{ .node_offset = self.src_node };
+                return LazySrcLoc.nodeOffset(self.src_node);
             }
         },
         @"break": struct {
@@ -2554,7 +2554,7 @@ pub const Inst = struct {
             inst: Index,
 
             pub fn src(self: @This()) LazySrcLoc {
-                return .{ .node_offset = self.src_node };
+                return LazySrcLoc.nodeOffset(self.src_node);
             }
         },
         str_op: struct {
